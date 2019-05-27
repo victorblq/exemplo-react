@@ -12,7 +12,7 @@ function UserList(props) {
 
     useEffect(() => {
         loadUsers();
-    });
+    }, []);
 
     async function loadUsers() {
         const { data } = await axios.get('/users');
@@ -39,7 +39,7 @@ function UserList(props) {
         <div className="App">
             <Logo/>
             <Link to="/">Go to home</Link>
-            {renderUserList}
+            {renderUserList()}
         </div>
     )
 
