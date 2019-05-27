@@ -22,9 +22,9 @@ function UserList(props) {
     function renderUserList() {
         
         const usersRow = users.map(({username, id}) => (
-            <li>
-                {username}
-                <Link className="Link" to={`/users/${id}`}></Link>
+            <li key={id}>
+                {username} | 
+                <Link className="Link" to={`/users/${id}`}>Detail</Link>
             </li>
         ))
         
@@ -37,9 +37,12 @@ function UserList(props) {
 
     return (
         <div className="App">
-            <Logo/>
-            <Link to="/">Go to home</Link>
-            {renderUserList()}
+            <header className="App-header">
+                <Logo />
+                <Link className="Link" to="/">Back</Link>
+
+                {renderUserList()}
+            </header>
         </div>
     )
 

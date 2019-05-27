@@ -27,7 +27,7 @@ class UserDetail extends Component{
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
-                    <Link className="Link" to="/users">voltar</Link>
+                    <Link className="Link" to="/users">Back</Link>
 
                     <div>
                         <p>ID: {this.state.user.id}</p>
