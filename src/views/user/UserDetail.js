@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../logo.svg';
-
-import '../../App.css';
+import Link from '../../components/Link';
+import Logo from '../../components/Logo';
 
 const axios = require('axios');
 
@@ -26,8 +24,8 @@ class UserDetail extends Component{
         return (
             <div className="App">
                 <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <Link className="Link" to="/users">Back</Link>
+                    <Logo />
+                    <Link to="/users">Back</Link>
 
                     <div>
                         <p>ID: {this.state.user.id}</p>

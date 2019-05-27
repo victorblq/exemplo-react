@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import Link from '../components/Link';
 import Logo from '../components/Logo';
-
-import '../App.css';
 
 import MessageList from './message/MessageList';
 
@@ -12,8 +10,9 @@ class Home extends Component {
             <div className="App">
                 <header className="App-header">
                     <Logo />
-                    <Link className="Link" to="/users">Go to users</Link>
-                    <Link className="Link" to="/messages/form">Cadastrar Mensagem</Link>
+                    <Link to="/users">Go to users</Link>
+                    <Link to="/messages/form">Add Mensagem</Link>
+                    <Link className="secure-link" to="/secure">To Secure</Link>
 
                     <MessageList/>
                 </header>

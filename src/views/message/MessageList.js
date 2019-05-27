@@ -1,40 +1,37 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
-import '../../App.css';
+import React, { useState, useEffect } from 'react';
+import Link from '../../components/Link';
 
 const axios = require('axios');
 
-class MessageList extends Component{
-    state = {
-        messages: []
-    };
+function MessageList(props){
+    const [messages, setMessages] = useState([]);
 
-    componentDidMount(){
-        axios.get('/messages')
-        .then((result) => {
-            this.setState({
-                messages: result.data
-            });
-        });
+    useEffect(() => {
+        loadMessages();
+    }, []);
+
+    async function loadMessages(){
+        const { data } = await axios.get('/messages');
+
+        setMessages(data);
     }
 
-    render(){
-        const messages = this.state.messages.map((message) => {
-            return (
-                <React.Fragment key={message.id}>
-                    <li>
-                        {message.text} | {message.user.username} | 
-                        <Link className="Link" to={`/messages/form/${message.id}`}>Editar</Link>
-                    </li>
-                </React.Fragment>
-            );
-        });
+    function renderMessagesList(){
+        const messageRows = messages.map((message) => (
+            <React.Fragment key={message.id}>
+                <li>
+                    {message.text} | {message.user.username} | 
+                    <Link to={`/messages/form/${message.id}`}>Editar</Link>
+                </li>
+            </React.Fragment>
+        ));
 
-        return (
-            <ol>{messages}</ol>
-        );
+        return messageRows;
     }
+
+    return (
+        <ol>{renderMessagesList()}</ol>
+    );
 }
 
 export default MessageList;

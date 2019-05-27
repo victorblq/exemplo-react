@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../logo.svg';
+import Link from '../../components/Link';
+import Logo from '../../components/Logo';
 import axios from 'axios'
-
-import '../../App.css';
 
 class MessageForm extends Component{
     constructor(props){
@@ -74,8 +72,8 @@ class MessageForm extends Component{
         return (
             <div className="App">
                 <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <Link className="Link" to="/">Back</Link>
+                    <Logo />
+                    <Link to="/">Back</Link>
 
                     <form>
                         <div>

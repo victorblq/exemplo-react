@@ -6,9 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import './index.css';
 
 import Home from './views/Home';
-
 import MessageForm from './views/message/MessageForm';
-
 import UserDetail from './views/user/UserDetail';
 import UserList from './views/user/UserList';
 
