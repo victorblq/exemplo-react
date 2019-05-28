@@ -9,6 +9,7 @@ import Home from './views/Home';
 import MessageForm from './views/message/MessageForm';
 import UserDetail from './views/user/UserDetail';
 import UserList from './views/user/UserList';
+import Secure from './views/secure/Secure';
 
 ReactDOM.render(
     <BrowserRouter>
@@ -18,6 +19,7 @@ ReactDOM.render(
             <Route path="/messages/form/:messageId" component={MessageForm}/>
             <Route path="/users" exact={true} component={UserList} />
             <Route path="/users/:userId" component={UserDetail}/>
+            <Route path="/secure" component={Secure}/>
         </Switch>
     </BrowserRouter>,
 document.getElementById('root'));
