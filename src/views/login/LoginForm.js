@@ -13,7 +13,7 @@ function LoginForm(props) {
             password: password
         };
 
-        axios.post('/authentication/authenticate', credentials)
+        axios.post('/authenticate', credentials)
         .then((result) => {
            //redirect 
         })

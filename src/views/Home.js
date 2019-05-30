@@ -12,6 +12,7 @@ class Home extends Component {
                 <header className="App-header">
                     <Logo />
                     <Link to="/users">Go to users</Link>
+                    <Link to="/secure">Go to secure</Link>
                     <Link to="/messages/form">Add Mensagem</Link>
 
                     <LoginForm />

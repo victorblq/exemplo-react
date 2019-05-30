@@ -13,7 +13,7 @@ class UserDetail extends Component{
         //Separate params from this.props
         const { match: { params } } = this.props;
 
-        axios.get(`/users/${ params.userId }`)
+        axios.get(`/user/${ params.userId }`)
         .then((result) => {
             this.setState({user: result.data});
         })

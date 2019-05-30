@@ -11,7 +11,7 @@ function MessageList(props){
     }, []);
 
     async function loadMessages(){
-        const { data } = await axios.get('/messages');
+        const { data } = await axios.get('/message');
 
         setMessages(data);
     }

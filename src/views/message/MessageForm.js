@@ -21,7 +21,7 @@ class MessageForm extends Component{
         const {match: {params}} = this.props;
         
         if(params.messageId) {
-            axios.get(`/messages/${params.messageId}`)
+            axios.get(`/message/${params.messageId}`)
             .then((result) => {
                 this.setState({
                     message: result.data
@@ -53,7 +53,7 @@ class MessageForm extends Component{
     }
 
     insertMessage(){
-        axios.post('/messages', this.state.message)
+        axios.post('/message', this.state.message)
         .then((result) => {
             this.props.history.push('/');
         })
@@ -61,7 +61,7 @@ class MessageForm extends Component{
     }
 
     updateMessage(){
-        axios.put('/messages', this.state.message)
+        axios.put('/message', this.state.message)
         .then((result) => {
             this.props.history.push('/');
         })
